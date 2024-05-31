@@ -1,9 +1,5 @@
-import Footer from "@/components/shared/Footer";
-import GetInTouchBtn from "@/components/shared/Forms/GetInTouchBtn";
-import Navbar from "@/components/shared/Navbar";
 import { Metadata } from "next";
-import Link from "next/link";
-import React, { ReactNode } from "react";
+import ClientLayout from "@/components/shared/ClientLayout";
 
 export const metadata: Metadata = {
 	title: "Dignity Direct Supports",
@@ -13,16 +9,10 @@ export const metadata: Metadata = {
 	},
 };
 
-const HomeLayout = ({ children }: Readonly<{ children: ReactNode }>) => {
+const HomeLayout = ({ children }: { children: React.ReactNode }) => {
 	return (
 		<main className="relative">
-			<Navbar />
-			<GetInTouchBtn />
-			<section className="flex min-h-screen flex-1">
-				<div className="w-full h-full">{children}</div>
-			</section>
-
-			<Footer />
+			<ClientLayout>{children}</ClientLayout>
 		</main>
 	);
 };
