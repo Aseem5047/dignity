@@ -13,6 +13,7 @@ const Services = () => {
 					alt="service banner"
 					layout="fill"
 					className="object-cover "
+					priority
 				/>
 				<div className="w-full flex-1 flex flex-col justify-center items-center gap-2 text-white px-4 bg-black/50 z-20">
 					<h2 className="text-3xl text-center sm:text-4xl font-medium pb-2 uppercase tracking-wider">
@@ -47,7 +48,7 @@ const Services = () => {
 					layout="fill"
 					className="object-cover "
 				/>
-				<div className="w-full flex-1 flex flex-col justify-center items-center gap-2 text-white px-4 bg-black/50 z-20 px-7">
+				<div className="w-full flex-1 flex flex-col justify-center items-center gap-2 text-white bg-black/50 z-20 px-5">
 					<h2 className="w-full lg:w-1/2 leading-[3rem] lg:leading-[4rem] text-2xl text-center lg:text-4xl pb-2 tracking-wider">
 						“Everything we do is based around the needs of the individual we’re
 						caring for. It’s vital to us that we’re not just supporting them,
