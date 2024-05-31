@@ -29,12 +29,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
 import toast from "react-hot-toast";
 
-export type GetInTouchParams = {
-	text: string;
-	classNames?: string;
-};
-
-const GetInTouchBtn = ({ text, classNames }: GetInTouchParams) => {
+const GetInTouchBtn = () => {
 	const [open, setOpen] = useState(false);
 
 	const form = useForm({
@@ -72,10 +67,10 @@ const GetInTouchBtn = ({ text, classNames }: GetInTouchParams) => {
 	};
 
 	return (
-		<div className={classNames}>
+		<div className="fixed bottom-[40%] right-0 transform translate-x-[46px] -rotate-90 bg-primary text-white p-4 pb-5 w-[160px] flex items-center justify-center rounded-t-xl border-2 border-white z-30">
 			<Dialog open={open} onOpenChange={setOpen}>
-				<DialogTrigger className="size-full flex flex-1 items-center justify-around gap-2 hoverScaleDownEffect">
-					<span>{text}</span>
+				<DialogTrigger className="size-full flex flex-1 items-center justify-around gap-2 hoverScaleEffect">
+					<span>Get in Touch</span>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						fill="none"

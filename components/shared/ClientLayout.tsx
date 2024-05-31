@@ -22,7 +22,11 @@ const ClientLayout = ({ children }: Readonly<{ children: ReactNode }>) => {
 	return (
 		<>
 			<Navbar />
-			<GetInTouchBtn />
+
+			<GetInTouchBtn
+				classNames="fixed bottom-[40%] right-0 transform translate-x-[46px] -rotate-90 bg-primary text-white p-4 pb-5 w-[160px] flex items-center justify-center rounded-t-xl border-2 border-white font-semib z-30"
+				text="Get In Touch"
+			/>
 			<section className="flex min-h-screen flex-1">
 				<div className="w-full h-full">{children}</div>
 			</section>
