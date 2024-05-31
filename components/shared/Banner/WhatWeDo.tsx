@@ -16,10 +16,10 @@ const WhatWeDo = () => {
 						distribution of letters, as opposed to using.
 					</span>
 					<span>
-						Content here', making it look like readable English. Many desktop
+						Content here, making it look like readable English. Many desktop
 						publishing packages and web page editors now use Lorem Ipsum as
-						their default model text, and a search for 'lorem ipsum' will
-						uncover many web sites still in their infancy.{" "}
+						their default model text, and a search for lorem ipsum will uncover
+						many web sites still in their infancy.
 					</span>
 				</div>
 			</div>

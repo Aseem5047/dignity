@@ -89,10 +89,10 @@ const GetInTouchBtn = () => {
 				<DialogContent className="bg-white p-6 rounded-md">
 					<DialogHeader className="flex flex-col items-center justify-center gap-5 py-5">
 						<DialogTitle className="text-center text-xl text-primary">
-							Let's Discuss Your Project
+							Let&apos;s Discuss Your Project
 						</DialogTitle>
 						<DialogDescription className="text-center text-gray-1">
-							We're excited to start soon!
+							We&apos;re excited to start soon!
 						</DialogDescription>
 					</DialogHeader>
 					<Form {...form}>
