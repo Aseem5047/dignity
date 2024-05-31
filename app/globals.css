@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	--default-color: #009b6f;
+}
+
+/* scrollbar styles */
+
+.no-scrollbar::-webkit-scrollbar {
+	display: none !important;
+}
+
+::-webkit-scrollbar {
+	height: 0.25rem;
+	width: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: var(--default-color);
+	border-radius: 15px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: #03a8f477;
+}
+
+::-webkit-scrollbar-track {
+	background-color: transparent;
+	border-radius: 9999px;
+}
+
+@layer base {
+	body {
+		@apply font-family no-scrollbar;
+	}
+}
+
+@layer utilities {
+	.hoverScaleEffect {
+		@apply transition-all duration-500 ease-in-out hover:scale-110;
+	}
+
+	.hoverScaleDownEffect {
+		@apply transition-all duration-500 ease-in-out hover:scale-95;
+	}
+}
+
+@layer components {
+	/* navbar styles */
+	.navlinks {
+		@apply text-secondary font-medium text-base px-5 py-[10px] hover:bg-background-1 rounded-xl;
+	}
+
+	.activeNavLink {
+		@apply bg-background-1;
+	}
+
+	.formInput {
+		@apply mt-1 block w-full px-3 py-2 border border-gray-300 hover:bg-background-1 rounded-md shadow-sm sm:text-sm focus:border-primary focus-visible:ring-offset-0 focus-visible:ring-transparent;
+	}
+
+	.formInputCareer {
+		@apply mt-1 block w-full px-3 !py-6 border border-gray-300 bg-[#FAFAFA] rounded-md shadow-sm sm:text-sm focus:border-secondary focus-visible:ring-offset-0 focus-visible:ring-transparent;
+	}
+}
