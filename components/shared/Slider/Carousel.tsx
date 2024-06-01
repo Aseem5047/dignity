@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -17,18 +17,24 @@ export type UserCardProp = {
 };
 
 const Carousel = () => {
-	const [currentSlide, setCurrentSlide] = useState(1); // Start at the middle card
+	const [currentSlide, setCurrentSlide] = useState(1);
+
+	useEffect(() => {
+		// Set initial slide to the middle card
+		setCurrentSlide(Math.floor(feedbacks.length / 2));
+	}, []);
 
 	const settings = {
 		dots: false,
 		infinite: true,
-		speed: 500,
+		speed: 1000,
 		slidesToShow: 3,
 		slidesToScroll: 1,
 		centerMode: true,
 		draggable: true,
 		focusOnSelect: true,
 		centerPadding: "0px",
+		initialSlide: Math.floor(feedbacks.length / 2),
 		afterChange: (current: number) => setCurrentSlide(current),
 		responsive: [
 			{
@@ -55,6 +61,8 @@ const Carousel = () => {
 		],
 	};
 
+	// console.log(currentSlide);
+
 	return (
 		<div className="w-full mt-10">
 			<Slider {...settings}>
@@ -62,7 +70,6 @@ const Carousel = () => {
 					<UserCard
 						key={index}
 						feedback={feedback}
-						index={index}
 						currentSlide={currentSlide}
 					/>
 				))}

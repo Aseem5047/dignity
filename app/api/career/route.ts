@@ -18,6 +18,12 @@ export async function POST(req: NextRequest) {
 		// Validate the request body
 		const formData = await req.json();
 
+		// Extract the file uploaded
+		const file = formData.file[0]; // Assuming only one file is uploaded
+
+		// Extract file content and metadata
+		const fileBase64 = file.content;
+
 		// Create a message object
 		const msg = {
 			to: "aseemgupta43@gmail.com",
@@ -25,10 +31,19 @@ export async function POST(req: NextRequest) {
 			templateId: templateId,
 			dynamic_template_data: {
 				...formData,
+				file: undefined,
 			},
+			attachments: [
+				{
+					content: fileBase64,
+					filename: file.path,
+					type: file.type,
+					disposition: "attachment",
+				},
+			],
 		};
 
-		// Send the email
+		// Send the email with attachment
 		await sendgrid.send(msg);
 
 		return NextResponse.json(

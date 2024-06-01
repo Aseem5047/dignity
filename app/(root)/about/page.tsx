@@ -1,4 +1,4 @@
-import CompanyValues from "@/components/Career/CompanyValues";
+import CompanyValues from "@/components/shared/Career/CompanyValues";
 import OurMission from "@/components/shared/Banner/OurMission";
 import PageBanner from "@/components/shared/Banner/PageBanner";
 import Testimonials from "@/components/shared/Testimonials/Testimonials";

@@ -162,23 +162,23 @@ export const values = [
 // SERVICES
 export const services = [
 	{
-		imageURL: "/assets/services/service1.png",
+		image: "/assets/services/service1.png",
 		label: "Day Support",
 	},
 	{
-		imageURL: "/assets/services/service2.png",
+		image: "/assets/services/service2.png",
 		label: "More Services & Pricing",
 	},
 	{
-		imageURL: "/assets/services/service3.png",
+		image: "/assets/services/service3.png",
 		label: "Supported Independent Living",
 	},
 	{
-		imageURL: "/assets/services/service4.png",
+		image: "/assets/services/service4.png",
 		label: "Respite Care",
 	},
 	{
-		imageURL: "/assets/services/service5.png",
+		image: "/assets/services/service5.png",
 		label: "Community Access",
 	},
 ];

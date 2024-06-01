@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import {
@@ -8,7 +8,6 @@ import {
 	FormControl,
 	FormField,
 	FormItem,
-	FormLabel,
 	FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
@@ -16,8 +15,12 @@ import { Button } from "@/components/ui/button";
 import { CareerFormSchema } from "@/lib/validator";
 import { CareerParams } from "@/types";
 import toast from "react-hot-toast";
+import FileUploader from "../FileUploader";
+import { Textarea } from "@/components/ui/textarea";
 
 const CareerForm = () => {
+	const [resetFileUploader, setResetFileUploader] = useState(false);
+
 	const form = useForm({
 		resolver: zodResolver(CareerFormSchema),
 		defaultValues: {
@@ -26,6 +29,8 @@ const CareerForm = () => {
 			phoneNumber: "",
 			email: "",
 			jobPosition: "",
+			file: [],
+			coverletter: "",
 		},
 	});
 
@@ -42,6 +47,7 @@ const CareerForm = () => {
 			if (response.status === 200) {
 				toast.success("Details Shared Successfully");
 				form.reset(); // Reset the form to initial values
+				setResetFileUploader(true); // Trigger reset of file uploader
 			} else {
 				toast.error("Unable to Send Details.");
 			}
@@ -50,6 +56,13 @@ const CareerForm = () => {
 			toast.error("Unable to Send Details.");
 		}
 	};
+
+	useEffect(() => {
+		if (resetFileUploader) {
+			// Resetting file uploader
+			setResetFileUploader(false);
+		}
+	}, [resetFileUploader]);
 
 	return (
 		<div className="w-full px-7 2xl:w-[66%]">
@@ -136,6 +149,39 @@ const CareerForm = () => {
 									/>
 								</FormControl>
 								<FormMessage />
+							</FormItem>
+						)}
+					/>
+
+					<FormField
+						control={form.control}
+						name="file"
+						render={({ field }) => (
+							<FormItem>
+								<FormControl>
+									<FileUploader
+										fieldChange={field.onChange}
+										reset={resetFileUploader}
+									/>
+								</FormControl>
+								<FormMessage className="shad-form_message" />
+							</FormItem>
+						)}
+					/>
+
+					<FormField
+						control={form.control}
+						name="coverletter"
+						render={({ field }) => (
+							<FormItem>
+								<FormControl>
+									<Textarea
+										className="max-h-[200px] place formInput"
+										placeholder="Write a brief introduction and your motivation for applying"
+										{...field}
+									/>
+								</FormControl>
+								<FormMessage className="shad-form_message" />
 							</FormItem>
 						)}
 					/>

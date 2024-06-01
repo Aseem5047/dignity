@@ -12,19 +12,18 @@ export type UserCardProp = {
 
 const UserCard = ({
 	feedback,
-	index,
 	currentSlide,
 }: {
 	feedback?: UserCardProp;
-	index: number;
 	currentSlide: any;
 }) => {
 	const { _id, testimonial, name, image } = feedback!;
-	const isActive = index === currentSlide;
+	const isActive = parseInt(_id) - 1 === currentSlide;
+	console.log(isActive);
 	return (
 		<div
-			className={`relative h-60 w-full cursor-pointer rounded-xl flex items-center justify-between gap-4 p-2 lg:p-4  transition-transform duration-300 ${
-				isActive ? " bg-[#F9F9F9] " : "transform scale-100"
+			className={`relative h-60 w-full cursor-pointer rounded-xl flex items-center justify-between gap-4 p-2 lg:p-4 transition-transform duration-300 ${
+				isActive ? " bg-[#F9F9F9]" : "transform scale-100"
 			}`}
 		>
 			<Image

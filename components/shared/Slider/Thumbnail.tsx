@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export type ThumbnailProps = {
 	service: {
-		imageURL: string;
+		image: string;
 		label: string;
 	};
 };
@@ -14,7 +14,7 @@ const Thumbnail = ({ service }: ThumbnailProps) => {
 	return (
 		<div className="relative h-72 min-w-[300px] cursor-pointer  md:min-w-[400px] rounded-xl">
 			<Image
-				src={`${service.imageURL}`}
+				src={`${service.image}`}
 				alt="Service"
 				layout="fill"
 				className="object-cover rounded-xl"

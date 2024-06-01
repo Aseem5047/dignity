@@ -26,7 +26,6 @@ import { Button } from "@/components/ui/button";
 import { getInTouchParams } from "@/types";
 import { getInTouchFormSchema } from "@/lib/validator";
 import { Textarea } from "@/components/ui/textarea";
-import { useToast } from "@/components/ui/use-toast";
 import toast from "react-hot-toast";
 
 export type GetInTouchParams = {

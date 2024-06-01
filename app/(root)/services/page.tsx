@@ -1,9 +1,60 @@
+"use client";
+
 import ServiceCard from "@/components/shared/services/ServiceCard";
 import { ourmission } from "@/constants";
 import Image from "next/image";
 import React from "react";
+import Slider from "react-slick";
 
-const Services = () => {
+const Services: React.FC = () => {
+	const settings = {
+		dots: false,
+		infinite: true,
+		slidesToShow: 5,
+		slidesToScroll: 1,
+		centerMode: true,
+		draggable: true,
+		focusOnSelect: true,
+		autoplay: true,
+		speed: 4000,
+		autoplaySpeed: 4000,
+		pauseOnHover: true,
+		cssEase: "linear",
+		centerPadding: "0px",
+		responsive: [
+			{
+				breakpoint: 500,
+				settings: {
+					slidesToShow: 1,
+					centerMode: false,
+				},
+			},
+			{
+				breakpoint: 768,
+				settings: {
+					slidesToShow: 2,
+					centerMode: false,
+				},
+			},
+
+			{
+				breakpoint: 1024,
+				settings: {
+					slidesToShow: 3,
+					centerMode: false,
+				},
+			},
+
+			{
+				breakpoint: 1356,
+				settings: {
+					slidesToShow: 4,
+					centerMode: false,
+				},
+			},
+		],
+	};
+
 	return (
 		<div className="flex flex-col items-center justify-center gap-7">
 			{/* banner 1 */}
@@ -33,10 +84,12 @@ const Services = () => {
 				<h2 className="text-primary text-center text-4xl font-semibold pb-2">
 					Our Mission
 				</h2>
-				<div className="flex w-full gap-10 items-center justify-start overflow-x-scroll no-scrollbar">
-					{ourmission.map((mission) => (
-						<ServiceCard mission={mission} key={mission.label} />
-					))}
+				<div className="w-full mt-10">
+					<Slider {...settings}>
+						{ourmission.map((mission) => (
+							<ServiceCard mission={mission} key={mission.label} />
+						))}
+					</Slider>
 				</div>
 			</div>
 
