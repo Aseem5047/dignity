@@ -8,11 +8,18 @@ export type ThumbnailProps = {
 		image: string;
 		label: string;
 	};
+	currentSlide: number;
+	index: number;
 };
 
-const Thumbnail = ({ service }: ThumbnailProps) => {
+const Thumbnail = ({ service, currentSlide, index }: ThumbnailProps) => {
+	const isActive = index === currentSlide;
 	return (
-		<div className="relative h-72 min-w-[300px] cursor-pointer  md:min-w-[400px] rounded-xl">
+		<div
+			className={`relative h-72 min-w-[300px] cursor-pointer  md:min-w-[400px] rounded-xl mx-4 ${
+				isActive && "bg-background-1"
+			}`}
+		>
 			<Image
 				src={`${service.image}`}
 				alt="Service"

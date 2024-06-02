@@ -16,6 +16,15 @@ export type UserCardProp = {
 	image: string;
 };
 
+export type SeriviceCardProp = {
+	_id: string;
+	testimonial: string;
+	name: string;
+	designation?: string;
+	company?: string;
+	image: string;
+};
+
 const Carousel = () => {
 	const [currentSlide, setCurrentSlide] = useState(1);
 

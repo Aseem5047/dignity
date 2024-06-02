@@ -1,6 +1,6 @@
 import Hero from "@/components/shared/Banner/Hero";
-import Slider from "@/components/shared/Slider/Slider";
 import WhatWeDo from "@/components/shared/Banner/WhatWeDo";
+import HomePageSlider from "@/components/shared/Slider/HomePageSlider";
 import React from "react";
 
 const HomePage = () => {
@@ -21,7 +21,7 @@ const HomePage = () => {
 			<WhatWeDo />
 
 			{/* Slider */}
-			<Slider />
+			<HomePageSlider />
 		</section>
 	);
 };
