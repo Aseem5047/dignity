@@ -8,7 +8,7 @@ import { NavigationBtnLeft, NavigationBtnRight } from "./NavigationBtn";
 
 const HomePageSlider = () => {
 	const rowRef = useRef<HTMLDivElement>(null);
-
+	const sliderRef = useRef<Slider>(null);
 	const [currentSlide, setCurrentSlide] = useState(1);
 
 	useEffect(() => {
@@ -26,12 +26,24 @@ const HomePageSlider = () => {
 		slidesToScroll: 1,
 		autoplay: true,
 		pauseOnHover: false,
-		speed: 4000,
-		autoplaySpeed: 4000,
+		speed: 3500,
+		autoplaySpeed: 3500,
 		centerPadding: "0px",
 		cssEase: "ease-in-out",
-		nextArrow: <NavigationBtnRight />,
-		prevArrow: <NavigationBtnLeft />,
+		nextArrow: (
+			<NavigationBtnRight
+				onMouseEnter={() => sliderRef.current?.slickPause()}
+				onMouseLeave={() => sliderRef.current?.slickPlay()}
+				onClick={() => handleNext()}
+			/>
+		),
+		prevArrow: (
+			<NavigationBtnLeft
+				onMouseEnter={() => sliderRef.current?.slickPause()}
+				onMouseLeave={() => sliderRef.current?.slickPlay()}
+				onClick={() => handlePrev()}
+			/>
+		),
 		initialSlide: Math.floor(services.length / 2),
 		afterChange: (current: number) => setCurrentSlide(current),
 		responsive: [
@@ -52,6 +64,18 @@ const HomePageSlider = () => {
 		],
 	};
 
+	const handleNext = () => {
+		if (sliderRef.current) {
+			sliderRef.current.slickNext();
+		}
+	};
+
+	const handlePrev = () => {
+		if (sliderRef.current) {
+			sliderRef.current.slickPrev();
+		}
+	};
+
 	return (
 		<div className="py-14 w-full px-7 sm:px-16 xl:px-32 z-20">
 			{/* heading and navigation */}
@@ -67,7 +91,7 @@ const HomePageSlider = () => {
 
 			{/* services */}
 			<div ref={rowRef} className="w-full mt-10 relative">
-				<Slider {...settings}>
+				<Slider ref={sliderRef} {...settings}>
 					{services.map((service, index) => (
 						<Thumbnail
 							key={service.label}
