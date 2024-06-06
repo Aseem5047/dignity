@@ -24,7 +24,7 @@ export const feedbacks = [
 	{
 		_id: "1",
 		testimonial:
-			"Sejal and her team are excellent & reliable carer. She has great work ethic & passion for what she does.",
+			"Sejal and her team are excellent and reliable carers. She has a great work ethic and passion for what she does. Their dedication and attention to detail consistently exceed expectations.",
 		name: "Luke Williams Sims",
 		image: "https://randomuser.me/api/portraits/men/1.jpg",
 	},
