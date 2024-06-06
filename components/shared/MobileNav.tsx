@@ -30,7 +30,7 @@ const MobileNav = () => {
 				</SheetTrigger>
 				<SheetContent
 					side="right"
-					className="border-none bg-dark-1 rounded-l-xl  px-7 py-10 pb-14"
+					className="border-none bg-dark-1 rounded-l-xl px-7 py-10 pb-14"
 				>
 					<Link href="/" className="flex items-center">
 						<Image
