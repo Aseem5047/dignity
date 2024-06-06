@@ -71,6 +71,7 @@ const Carousel = () => {
 						key={index}
 						feedback={feedback}
 						currentSlide={currentSlide}
+						index={index}
 					/>
 				))}
 			</Slider>
