@@ -17,7 +17,7 @@ export type UserCardProp = {
 };
 
 const Carousel = () => {
-	const [currentSlide, setCurrentSlide] = useState(1);
+	const [currentSlide, setCurrentSlide] = useState(0);
 
 	useEffect(() => {
 		// Set initial slide to the middle card

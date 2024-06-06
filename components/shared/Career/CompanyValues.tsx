@@ -1,7 +1,7 @@
 "use client";
 
 import { values } from "@/constants";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
 	VerticalTimeline,
 	VerticalTimelineElement,
@@ -21,9 +21,24 @@ const ValueCard = ({ value }: { value: ValueCardProps }) => {
 	const { ref, inView } = useInView({
 		triggerOnce: true,
 	});
+	const [isMobile, setIsMobile] = useState(false);
+
+	useEffect(() => {
+		const handleResize = () => {
+			setIsMobile(window.innerWidth < 500);
+		};
+
+		handleResize();
+		window.addEventListener("resize", handleResize);
+
+		return () => {
+			window.removeEventListener("resize", handleResize);
+		};
+	}, []);
+
 	return (
 		<VerticalTimelineElement
-			visible={inView}
+			visible={isMobile ? true : inView}
 			contentStyle={{
 				background: "#f9f9f9",
 				color: "black",
@@ -31,16 +46,14 @@ const ValueCard = ({ value }: { value: ValueCardProps }) => {
 			}}
 			iconStyle={{ background: "#ffffff", color: "#fff" }}
 			icon={
-				<div
-					className="flex items-center justify-center h-full w-full"
-					ref={ref}
-				>
+				<div className="flex items-center justify-center h-full w-full">
 					<Image
 						src="/icons/quot.png"
 						alt=""
-						height={100}
-						width={100}
-						className="w-5 h-5 self-center"
+						height={200}
+						width={200}
+						className="w-5 h-4 self-center"
+						ref={ref}
 					/>
 				</div>
 			}
