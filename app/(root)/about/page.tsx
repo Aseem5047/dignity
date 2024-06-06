@@ -12,9 +12,7 @@ const About = () => {
 			{/* main banner */}
 			<PageBanner
 				title="ABOUT OUR COMPANY"
-				description="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum,
-					officiis sequi! Aperiam neque iusto libero consectetur pariatur cum
-					est quos!"
+				description="At Dignity Direct Supports, we are committed to empowering individuals of all abilities with personalized and comprehensive support services. Our mission is to enhance independence and improve quality of life through community engagement, assistance with daily activities, and life skills development. We strive to create a welcoming and inclusive environment where everyone can flourish."
 			/>
 			{/* banners */}
 			<div className="w-full flex items-center justify-center  px-7 md:px-14 xl:px-32 py-16">

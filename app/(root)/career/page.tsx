@@ -10,8 +10,7 @@ const Carrer = () => {
 
 			<PageBanner
 				title="CAREERS"
-				description="Join the Support Team !"
-				buttonText="Apply Now"
+				description="Join to Support Team !"
 			/>
 
 			<div className="flex flex-col items-center justify-center gap-5 lg:px-32 2xl:px-44 py-14">

@@ -93,10 +93,10 @@ const GetInTouchBtn = ({ text, classNames }: GetInTouchParams) => {
 				<DialogContent className="bg-white p-6 rounded-md">
 					<DialogHeader className="flex flex-col items-center justify-center gap-5 py-5">
 						<DialogTitle className="text-center text-xl text-primary">
-							Let&apos;s Discuss Your Project
+							Get in touch
 						</DialogTitle>
 						<DialogDescription className="text-center text-gray-1">
-							We&apos;re excited to start soon!
+							We&apos;re excited to hear from you!
 						</DialogDescription>
 					</DialogHeader>
 					<Form {...form}>
@@ -178,10 +178,10 @@ const GetInTouchBtn = ({ text, classNames }: GetInTouchParams) => {
 								name="projectDescription"
 								render={({ field, fieldState }) => (
 									<FormItem className="w-full">
-										<FormLabel>Short Project Description (optional)</FormLabel>
+										<FormLabel>Message for us (optional)</FormLabel>
 										<FormControl>
 											<Textarea
-												placeholder="I want to build an e-commerce mobile app. I've wireframes to start with."
+												placeholder="Share your thoughts, questions, or ideas!"
 												{...field}
 												className="max-h-[125px] formInput"
 											/>

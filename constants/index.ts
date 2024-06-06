@@ -24,69 +24,34 @@ export const feedbacks = [
 	{
 		_id: "1",
 		testimonial:
-			"I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-		name: "Sara Lee",
-		designation: "CFO",
-		company: "Acme Co",
+			"Sejal and her team are excellent & reliable carer. She has great work ethic & passion for what she does.",
+		name: "Luke Williams Sims",
 		image: "https://randomuser.me/api/portraits/men/1.jpg",
 	},
 	{
 		_id: "2",
 		testimonial:
-			"I've never met a web developer who truly cares about their clients' success like Rick does.",
-		name: "Chris Brown",
-		designation: "COO",
-		company: "DEF Corp",
+			"Sejal and her team have been amazing. Their reliability and hard work have made a significant difference in our daily lives. We highly recommend them to anyone in need of exceptional care.",
+		name: "Michael T.",
 		image: "https://randomuser.me/api/portraits/men/2.jpg",
 	},
 	{
 		_id: "3",
 		testimonial:
-			"After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-		name: "Lisa Wang",
-		designation: "CTO",
-		company: "456 Enterprises",
+			"Sejal and her team have been a lifeline for me. Their reliability and dedication ensure I receive the care I need every day. Their kindness and professionalism are truly exceptional.",
+		name: "John M.",
 		image: "https://randomuser.me/api/portraits/women/3.jpg",
-	},
-	,
-	{
-		_id: "4",
-		testimonial:
-			"I am thoroughly impressed by Rick's ability to deliver high-quality work under tight deadlines.",
-		name: "James Anderson",
-		designation: "Operations Manager",
-		company: "Streamline Inc",
-		image: "https://randomuser.me/api/portraits/men/4.jpg",
-	},
-	{
-		_id: "5",
-		testimonial:
-			"Rick's work exceeded our expectations. Our website's performance and design have never been better.",
-		name: "Olivia Thomas",
-		designation: "HR Manager",
-		company: "Talent Solutions",
-		image: "https://randomuser.me/api/portraits/women/2.jpg",
-	},
-	{
-		_id: "6",
-		testimonial:
-			"We saw a significant boost in our online engagement after Rick revamped our site. Highly recommend their services!",
-		name: "Daniel White",
-		designation: "Digital Strategist",
-		company: "Engage Media",
-		image: "https://randomuser.me/api/portraits/men/8.jpg",
 	},
 ];
 
 // FOOTER SECTION
 export const FOOTER_LINKS = [
 	{
-		title: "Company",
+		title: "Important Links",
 		links: [
 			{ label: "About", route: "/about" },
-			{ label: "Terms of Services", route: "/" },
-			{ label: "Privacy Policy", route: "/" },
-			{ label: "Cookie Policy", route: "/" },
+			{ label: "Career", route: "/career" },
+			{ label: "Services", route: "/services" },
 		],
 	},
 	// {
@@ -102,7 +67,7 @@ export const FOOTER_LINKS = [
 export const footerContactInfo = {
 	title: "Contact Us",
 	links: [
-		{ type: "mobile", label: "Admin", value: "+91 123-456-7890" },
+		{ type: "mobile", label: "Admin", value: "+61 410-124-500" },
 		{ type: "email", label: "Email", value: "dignity@gmail.com" },
 	],
 };
@@ -110,10 +75,14 @@ export const footerContactInfo = {
 export const socials = {
 	title: "Social",
 	links: [
-		"/assets/footer/facebook.svg",
-		"/assets/footer/instagram.svg",
-		"/assets/footer/twitter.svg",
-		"/assets/footer/youtube.svg",
+		{
+			img: "/assets/footer/facebook.svg",
+			link: "https://www.facebook.com/profile.php?id=100091640688661&mibextid=LQQJ4d",
+		},
+		{
+			img: "/assets/footer/instagram.svg",
+			link: "https://www.instagram.com/dignitydirect?igsh=MXdyMHE4b3pyaGx4bg==",
+		},
 	],
 };
 
@@ -134,124 +103,108 @@ export const staffPointers = [
 export const values = [
 	{
 		label: "COMPASSION",
-		value:
+		companyValue:
 			"Embracing your unique journey, ensuring you feel understood and cared for.",
+		image: "/assets/values/compassion.jpg",
 	},
 	{
 		label: "TRUST",
-		value:
+		companyValue:
 			"Fostering honest and transparent relationships, inspiring your confidence and peace of mind.",
+		image: "/assets/values/trust.jpg",
 	},
 	{
 		label: "RESPECT",
-		value:
+		companyValue:
 			"Honoring your dignity, privacy, and choices in every aspect of our service.",
+		image: "/assets/values/respect.jpg",
 	},
 	{
 		label: "EXCELLENCE",
-		value:
+		companyValue:
 			"Providing you with exceptional care and continually striving for improvement.",
+		image: "/assets/values/excellence.jpg",
 	},
 	{
 		label: "TOGETHERNESS",
-		value:
+		companyValue:
 			"Creating a supportive community, working hand in hand with you, your family, and professionals to achieve shared goals.",
+		image: "/assets/values/togetherness.jpg",
 	},
 ];
 
 // SERVICES
 export const services = [
 	{
-		image: "/assets/services/service1.png",
-		label: "Day Support",
+		image: "/assets/services/community_events.jpg",
+		label: "Community participation",
 	},
 	{
-		image: "/assets/services/service2.png",
-		label: "More Services & Pricing",
+		image: "/assets/services/Assistance_in_personal_activities.jpg",
+		label: "Assistance in personal activities",
 	},
 	{
-		image: "/assets/services/service3.png",
-		label: "Supported Independent Living",
+		image: "/assets/services/Developing_daily_life_and_living_skills.jpg",
+		label: "Developing daily life and living skills",
 	},
 	{
-		image: "/assets/services/service4.png",
-		label: "Respite Care",
+		image: "/assets/services/Household_tasks.jpg",
+		label: "Household tasks",
 	},
 	{
-		image: "/assets/services/service5.png",
-		label: "Community Access",
+		image: "/assets/services/1_1Activities.jpg",
+		label: "1:1 Activities",
 	},
 ];
 
 export const ourmission = [
 	{
-		imageURL: "/assets/services/service3.png",
-		label: "Supported Independent Living",
-		sublabel: "Empowering Autonomy",
+		imageURL: "/assets/services/community_events.jpg",
+		label: "Community participation",
+		sublabel: "Connect and Thrive in Your Community",
 		description:
-			"Providing the necessary support to help individuals live independently and manage daily activities with confidence.",
+			"Join vibrant community activities tailored for you, fostering connections and creating a sense of belonging in an inclusive environment.",
 	},
 	{
-		imageURL: "/assets/services/service4.png",
-		label: "Respite Care",
-		sublabel: "Peace of Mind",
+		imageURL: "/assets/services/Assistance_in_personal_activities.jpg",
+		label: "Assistance in personal activities",
+		sublabel: "Personalized Support for Daily Routines",
 		description:
-			"Offering temporary relief for primary caregivers, ensuring their loved ones receive quality care in their absence.",
+			"Experience compassionate and expert assistance with personal tasks, making everyday routines seamless and stress-free.",
 	},
 	{
-		imageURL: "/assets/services/service5.png",
-		label: "Community Access Something",
-		sublabel: "Inclusive Engagement",
+		imageURL: "/assets/services/Developing_daily_life_and_living_skills.jpg",
+		label: "Developing daily life and living skills",
+		sublabel: "Empower Your Independence",
 		description:
-			"Facilitating community involvement and access to various social, recreational, and educational activities.",
+			"Empower yourself with our specialized training programs, designed to help you master daily life skills for greater independence and confidence.",
 	},
 	{
-		imageURL: "/assets/services/service1.png",
-		label: "Day Support",
-		sublabel: "Daily Enrichment",
+		imageURL: "/assets/services/Household_tasks.jpg",
+		label: "Household tasks",
+		sublabel: "We Handle the Chores, You Enjoy Life",
 		description:
-			"Providing structured day programs that promote personal development, social interaction, and skill-building.",
+			"Leave the household chores to us! Our dedicated support ensures your home is well-maintained, giving you more time and energy for what you love.",
 	},
 	{
-		imageURL: "/assets/services/service2.png",
-		label: "More Services & Pricing",
-		sublabel: "Comprehensive Solutions",
+		imageURL: "/assets/services/1_1Activities.jpg",
+		label: "1:1 Activities",
+		sublabel: "Tailored Activities Just for You",
 		description:
-			"Explore our wide range of services and flexible pricing options tailored to meet individual needs and preferences.",
+			"Enjoy personalized, one-on-one activities that cater to your interests and abilities, ensuring a fulfilling and enjoyable experience.",
 	},
 	{
-		imageURL: "/assets/services/service6.png",
-		label: "Therapeutic Services",
-		sublabel: "Holistic Wellness",
+		imageURL: "/assets/services/In_home_support.jpg",
+		label: "In home support",
+		sublabel: "Comfort and Care at Home",
 		description:
-			"Offering a variety of therapeutic services to enhance physical, emotional, and mental well-being.",
+			"Relax and feel secure with our dedicated in-home support services, providing the care and companionship you need in the comfort of your own home.",
 	},
 	{
-		imageURL: "/assets/services/service7.png",
-		label: "Transportation Assistance",
-		sublabel: "Reliable Mobility",
+		imageURL: "/assets/services/Transport_service.jpg",
+		label: "Transport service",
+		sublabel: "Safe and Accessible Travel",
 		description:
-			"Providing safe and reliable transportation options for individuals to access appointments and community activities.",
-	},
-	{
-		imageURL: "/assets/services/service8.png",
-		label: "Vocational Training",
-		sublabel: "Career Development",
-		description:
-			"Delivering vocational training programs to help individuals develop skills and gain employment opportunities.",
-	},
-	{
-		imageURL: "/assets/services/service9.png",
-		label: "Personal Care",
-		sublabel: "Individualized Support",
-		description:
-			"Offering personalized care services to assist with daily living activities and promote independence.",
-	},
-	{
-		imageURL: "/assets/services/service10.png",
-		label: "Crisis Intervention",
-		sublabel: "Immediate Support",
-		description:
-			"Providing urgent support and intervention for individuals experiencing a crisis to ensure their safety and well-being.",
+			"Travel with ease using our safe and accessible transport services, ensuring you reach your destinations comfortably and on time.",
 	},
 ];

@@ -20,8 +20,8 @@ export async function POST(req: NextRequest) {
 
 		// Create a message object
 		const msg = {
-			to: "aseemgupta43@gmail.com",
-			from: "aseemgupta2002@gmail.com",
+			to: "tushargpt224@gmail.com",
+			from: "tushargpt224@gmail.com",
 			templateId: templateId,
 			dynamic_template_data: {
 				...formData,

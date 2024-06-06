@@ -63,14 +63,14 @@ const Footer: React.FC = () => {
 										<p className="whitespace-nowrap text-base">{link.label}:</p>
 										{link.type === "mobile" ? (
 											<Link
-												href="tel:+91 8894966484"
+												href="tel:+61 410-124-500"
 												className="text-base whitespace-nowrap hoverScaleEffect hover:scale-105"
 											>
 												{link.value}
 											</Link>
 										) : (
 											<Link
-												href="mailto:aseemgupta2002@gmail.com"
+												href="mailto:Info@dignitydirect.com.au"
 												className="text-base whitespace-nowrap hoverScaleEffect hover:scale-105"
 											>
 												{link.value}
@@ -86,9 +86,7 @@ const Footer: React.FC = () => {
 								Registered Office
 							</h4>
 							<span className="hoverScaleEffect hover:scale-105 cursor-pointer">
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit
-								commodi ipsam nihil placeat quam molestiae eos debitis mollitia
-								enim quos.
+								Launceston region
 							</span>
 						</div>
 
@@ -97,9 +95,9 @@ const Footer: React.FC = () => {
 								<ul className="text-[14px] font-[400] flex gap-4 ">
 									{socials.links.map((link, index) => (
 										<li key={index} className="hoverScaleEffect w-fit ">
-											<Link href="/">
+											<Link href={link.link} target="_blank">
 												<Image
-													src={link}
+													src={link.img}
 													alt="social logo"
 													width={24}
 													height={24}

@@ -1,6 +1,74 @@
+"use client";
+
 import { values } from "@/constants";
-import Image from "next/image";
 import React from "react";
+import {
+	VerticalTimeline,
+	VerticalTimelineElement,
+} from "react-vertical-timeline-component";
+import "react-vertical-timeline-component/style.min.css";
+
+import { useInView } from "react-intersection-observer";
+import Image from "next/image";
+
+export type ValueCardProps = {
+	label: string;
+	companyValue: string;
+	image: string;
+};
+
+const ValueCard = ({ value }: { value: ValueCardProps }) => {
+	const { ref, inView } = useInView({
+		triggerOnce: true,
+	});
+	return (
+		<VerticalTimelineElement
+			visible={inView}
+			contentStyle={{
+				background: "#f9f9f9",
+				color: "black",
+				boxShadow: "0 3px 10px rgba(0, 0, 0, 0.1)",
+			}}
+			iconStyle={{ background: "#ffffff", color: "#fff" }}
+			icon={
+				// <svg
+				// 	xmlns="http://www.w3.org/2000/svg"
+				// 	fill="none"
+				// 	viewBox="0 0 24 24"
+				// 	strokeWidth={1.5}
+				// 	stroke="currentColor"
+				// 	className="size-6"
+				// >
+				// 	<path
+				// 		strokeLinecap="round"
+				// 		strokeLinejoin="round"
+				// 		d="m4.5 12.75 6 6 9-13.5"
+				// 	/>
+				// </svg>
+				<div className="flex items-center justify-center h-full w-full">
+					<Image
+						src="/icons/quot.png"
+						alt=""
+						height={100}
+						width={100}
+						className="w-5 h-5 self-center"
+					/>
+				</div>
+			}
+		>
+			<section ref={ref}>
+				<h3 className="text-primary text-[24px] font-bold">{value.label}</h3>
+				<p className="text-secondary text-[16px] font-semibold m-0">
+					Our Value
+				</p>
+
+				<span className="text-black-100 text-[14px] tracking-wider">
+					{value.companyValue}
+				</span>
+			</section>
+		</VerticalTimelineElement>
+	);
+};
 
 const CompanyValues = () => {
 	return (
@@ -9,22 +77,18 @@ const CompanyValues = () => {
 				<h2 className="text-center md:text-start self-start text-2xl md:text-4xl text-primary font-semibold w-full">
 					Company Values for Dignity Direct Supports
 				</h2>
-				<ul className="flex flex-col gap-2 px-6">
-					{values.map((value, index) => (
-						<li key={index} className="list-decimal">
-							<span className="text-base font-medium">{value.label}: </span>
-							<span className="text-base">{value.value}</span>
-						</li>
-					))}
-				</ul>
+				<div className="mt-10 mx-auto">
+					<VerticalTimeline
+						animate={true}
+						layout={"2-columns"}
+						lineColor="#ffffff"
+					>
+						{values.map((value, index) => (
+							<ValueCard key={index} value={value} />
+						))}
+					</VerticalTimeline>
+				</div>
 			</div>
-			<Image
-				src="/assets/values/values.png"
-				alt=""
-				width={500}
-				height={500}
-				className="w-3/4 h-[300px] rounded-xl object-cover"
-			/>
 		</div>
 	);
 };

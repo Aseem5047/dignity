@@ -26,13 +26,13 @@ const UserCard = ({
 				isActive ? " bg-[#F9F9F9]" : "transform scale-100"
 			}`}
 		>
-			<Image
+			{/* <Image
 				src={image}
 				alt="User"
 				width={300}
 				height={300}
 				className="rounded-xl w-44 h-52 object-cover"
-			/>
+			/> */}
 
 			<div className="flex flex-col items-start justify-center gap-4">
 				<span className="text-base">{testimonial}</span>

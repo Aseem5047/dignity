@@ -72,10 +72,10 @@ const HomePageSlider = () => {
 			{/* heading and navigation */}
 			<div className="flex flex-wrap gap-4 items-center justify-between w-full">
 				<div className="flex flex-col items-start justify-center w-fit">
-					<h2 className="font-semibold text-2xl md:text-4xl">Our Services</h2>
-					<span className="text-gray-400 text-lg">
-						Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam,
-						quas.
+					<h2 className="font-semibold text-3xl md:text-4xl">Our Services</h2>
+					<span className="text-gray-400 text-lg mt-2">
+						We focus on the needs of the individuals we care for, ensuring our
+						support makes a positive difference in their lives.
 					</span>
 				</div>
 			</div>

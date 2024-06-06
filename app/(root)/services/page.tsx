@@ -68,13 +68,13 @@ const Services: React.FC = () => {
 				/>
 				<div className="w-full flex-1 flex flex-col justify-center items-center gap-2 text-white px-4 bg-black/50 z-20">
 					<h2 className="text-3xl text-center sm:text-4xl font-medium pb-2 uppercase tracking-wider">
-						“I don’t need easy, I just need possible.”
+						“Empowering Lives, Enabling Futures”
 					</h2>
 					<span className="text-base tracking-widest w-full md:w-3/4 xl:w-1/2 text-center">
-						In publishing and graphic design, Lorem ipsum is a placeholder text
-						commonly used to demonstrate the visual form of a document or a
-						typeface without relying on meaningful content. Lorem ipsum may be
-						used as a placeholder before final copy is available
+					At Dignity Direct Supports,, we are dedicated to transforming the lives of 
+					individuals with disabilities through compassionate care and innovative services. 
+					Our tailored support programs ensure every person can live a fulfilling and independent life,
+					embracing their unique abilities.
 					</span>
 				</div>
 			</div>
@@ -82,7 +82,7 @@ const Services: React.FC = () => {
 			{/* Our Mission */}
 			<div className="flex flex-col items-start justify-center py-14 w-full px-7 sm:pl-16 xl:pl-32 z-20 gap-4">
 				<h2 className="text-primary text-center text-4xl font-semibold pb-2">
-					Our Mission
+					Our Services
 				</h2>
 				<div className="w-full mt-10">
 					<Slider {...settings}>

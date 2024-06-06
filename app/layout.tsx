@@ -1,14 +1,14 @@
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { Poppins } from "next/font/google";
+import { Roboto } from "next/font/google";
 import { Toaster } from "react-hot-toast";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./globals.css";
 
-const poppins = Poppins({
+const roboto = Roboto({
 	subsets: ["latin"],
-	weight: ["400", "500", "600", "700"],
-	variable: "--font-poppins",
+	weight: ["100", "300", "400", "500", "700", "900"],
+	variable: "--font-roboto",
 });
 
 export default function RootLayout({
@@ -19,7 +19,7 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<TooltipProvider>
-				<body className={`${poppins.variable}`}>
+				<body className={`${roboto.variable}`}>
 					<Toaster
 						position="bottom-center"
 						toastOptions={{
