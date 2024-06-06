@@ -9,7 +9,9 @@ import { NavigationBtnLeft, NavigationBtnRight } from "./NavigationBtn";
 const HomePageSlider = () => {
 	const rowRef = useRef<HTMLDivElement>(null);
 	const sliderRef = useRef<Slider>(null);
-	const [currentSlide, setCurrentSlide] = useState(1);
+	const [currentSlide, setCurrentSlide] = useState(
+		Math.floor(services.length / 2)
+	);
 
 	useEffect(() => {
 		// Set initial slide to the middle card
@@ -20,30 +22,15 @@ const HomePageSlider = () => {
 		dots: false,
 		infinite: true,
 		slidesToShow: 3,
-		centerMode: false,
-		draggable: false,
+		centerMode: true,
+		draggable: true,
 		focusOnSelect: false,
 		slidesToScroll: 1,
-		autoplay: true,
-		pauseOnHover: false,
-		speed: 3500,
-		autoplaySpeed: 3500,
+		speed: 1000,
 		centerPadding: "0px",
 		cssEase: "ease-in-out",
-		nextArrow: (
-			<NavigationBtnRight
-				onMouseEnter={() => sliderRef.current?.slickPause()}
-				onMouseLeave={() => sliderRef.current?.slickPlay()}
-				onClick={() => handleNext()}
-			/>
-		),
-		prevArrow: (
-			<NavigationBtnLeft
-				onMouseEnter={() => sliderRef.current?.slickPause()}
-				onMouseLeave={() => sliderRef.current?.slickPlay()}
-				onClick={() => handlePrev()}
-			/>
-		),
+		nextArrow: <NavigationBtnRight onClick={() => handleNext()} />,
+		prevArrow: <NavigationBtnLeft onClick={() => handlePrev()} />,
 		initialSlide: Math.floor(services.length / 2),
 		afterChange: (current: number) => setCurrentSlide(current),
 		responsive: [
@@ -67,12 +54,16 @@ const HomePageSlider = () => {
 	const handleNext = () => {
 		if (sliderRef.current) {
 			sliderRef.current.slickNext();
+			// Update current slide immediately
+			setCurrentSlide((prev) => (prev + 1) % services.length);
 		}
 	};
 
 	const handlePrev = () => {
 		if (sliderRef.current) {
 			sliderRef.current.slickPrev();
+			// Update current slide immediately
+			setCurrentSlide((prev) => (prev - 1 + services.length) % services.length);
 		}
 	};
 
