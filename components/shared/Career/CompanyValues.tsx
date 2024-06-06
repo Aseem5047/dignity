@@ -31,21 +31,10 @@ const ValueCard = ({ value }: { value: ValueCardProps }) => {
 			}}
 			iconStyle={{ background: "#ffffff", color: "#fff" }}
 			icon={
-				// <svg
-				// 	xmlns="http://www.w3.org/2000/svg"
-				// 	fill="none"
-				// 	viewBox="0 0 24 24"
-				// 	strokeWidth={1.5}
-				// 	stroke="currentColor"
-				// 	className="size-6"
-				// >
-				// 	<path
-				// 		strokeLinecap="round"
-				// 		strokeLinejoin="round"
-				// 		d="m4.5 12.75 6 6 9-13.5"
-				// 	/>
-				// </svg>
-				<div className="flex items-center justify-center h-full w-full">
+				<div
+					className="flex items-center justify-center h-full w-full"
+					ref={ref}
+				>
 					<Image
 						src="/icons/quot.png"
 						alt=""
@@ -56,7 +45,7 @@ const ValueCard = ({ value }: { value: ValueCardProps }) => {
 				</div>
 			}
 		>
-			<section ref={ref}>
+			<section>
 				<h3 className="text-primary text-[24px] font-bold">{value.label}</h3>
 				<p className="text-secondary text-[16px] font-semibold m-0">
 					Our Value
