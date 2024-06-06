@@ -20,7 +20,8 @@ const UserCard = ({
 	index: number;
 }) => {
 	const { _id, testimonial, name, image } = feedback!;
-	const isActive = index - 1 === currentSlide;
+	const isActive =
+		index - 1 === currentSlide || parseInt(_id) + 1 === currentSlide;
 	console.log(isActive);
 	return (
 		<div
